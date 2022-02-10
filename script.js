@@ -42,14 +42,14 @@ function hide(){
         }
   
 }
-let i = 0
+let score = 0
 let j = -1
 const onClickBtn = (id) => {
     const iconParent = document.getElementById(id)
     const icon = iconParent.children[0]
     if (iconParent.dataset.show == "false") {
          icon.style.display='inline'
-          document.getElementById(id).onclick=function(){}
+         document.getElementById(id).onclick=function(){}
          currentid=iconParent.id
          currentName=icon.className
 
@@ -64,7 +64,7 @@ const onClickBtn = (id) => {
          console.log(namearr[j-1]);
          console.log(namearr[j])
          if(namearr[j-1]===namearr[j]){
-             document.getElementById('score').innerHTML=`score:${i+=5}`
+             document.getElementById('score').innerHTML=`score:${score+=5}`
              document.getElementById(idname[j]).style.backgroundColor='green'
              document.getElementById(idname[j-1]).style.backgroundColor='green'
              document.getElementById('myaudio').play()
@@ -84,8 +84,10 @@ const onClickBtn = (id) => {
 }
 
 function restart(){
+    score = 0
     document.getElementById('game-container').innerHTML=''
-    document.getElementById('score').innerHTML='score:0'
+    document.getElementById('score').innerHTML=`score:${score}`
     loadingGame()
 }
+
 
