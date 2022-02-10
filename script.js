@@ -49,7 +49,7 @@ const onClickBtn = (id) => {
     const icon = iconParent.children[0]
     if (iconParent.dataset.show == "false") {
          icon.style.display='inline'
-         
+          document.getElementById(id).onclick=function(){}
          currentid=iconParent.id
          currentName=icon.className
 
